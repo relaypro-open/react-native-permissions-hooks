@@ -1,0 +1,102 @@
+{
+  "root": true,
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true
+  },
+  "globals": {
+    "global": true,
+    "process": true,
+    "require": true,
+    "fetch": true,
+    "console": true,
+    "Headers": true,
+    "setInterval": true,
+    "clearInterval": true,
+    "setTimeout": true,
+    "clearTimeout": true,
+    "setImmediate": true,
+    "clearImmediate": true,
+    "navigator": true,
+    "WebSocket": true,
+    "__DEV__": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:eslint-comments/recommended",
+    "plugin:lodash/recommended",
+    "plugin:react/recommended",
+    "plugin:react-native/all",
+    "plugin:import/warnings"
+  ],
+  "plugins": [
+    "react-hooks"
+  ],
+  "rules": {
+    "import/no-dynamic-require": "error",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": false, "optionalDependencies": false, "peerDependencies": true,  "bundledDependencies": false }],
+    "indent": [
+      "error",
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "log",
+          "error",
+          "warn",
+          "info",
+          "time",
+          "timeEnd"
+        ]
+      }
+    ],
+    "no-trailing-spaces": "error",
+    "quotes": [
+      "warn",
+      "backtick",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "semi": [
+      "warn",
+      "never"
+    ],
+    "import/no-unused-modules": [1, { "unusedExports": false, "missingExports": true }]
+  },
+  "overrides": [
+    {
+      "files": [ "*.js" ],
+      "rules": {
+        "react-native/no-raw-text": "off",
+        "import/no-named-as-default": "off",
+        "import/no-named-as-default-member": "off"
+      }
+    }
+  ]
+}

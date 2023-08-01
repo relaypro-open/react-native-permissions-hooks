@@ -1,0 +1,54 @@
+{
+  "name": "react-native-permissions-hooks",
+  "version": "1.0.0",
+  "description": "A collection of useful hooks to use with react-native-permissions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/relaypro-open/react-native-permissions-hooks.git"
+  },
+  "keywords": [
+    "react-native",
+    "react native",
+    "permissions",
+    "react-native-permissions",
+    "hooks"
+  ],
+  "author": "Derek Batts @dsbatts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/relaypro-open/react-native-permissions-hooks/issues"
+  },
+  "homepage": "https://github.com/relaypro-open/react-native-permissions-hooks#readme",
+  "peerDependencies": {
+    "react": ">=16.13.1",
+    "react-native": ">=0.63.3",
+    "react-native-permissions": "^3.8.4"
+  },
+  "devDependencies": {
+    "@babel/core": "7.21.8",
+    "@babel/eslint-parser": "^7.22.9",
+    "@babel/plugin-proposal-do-expressions": "7.18.6",
+    "@babel/plugin-proposal-logical-assignment-operators": "7.20.7",
+    "@babel/plugin-proposal-numeric-separator": "7.18.6",
+    "@babel/plugin-proposal-throw-expressions": "7.18.6",
+    "@babel/runtime": "7.21.5",
+    "@react-native-community/eslint-config": "3.2.0",
+    "babel-eslint": "10.1.0",
+    "eslint": "8.40.0",
+    "eslint-import-resolver-babel-plugin-root-import": "github:relaypro-open/eslint-import-resolver-babel-plugin-root-import#2d44f52066acd5ecc532a6f01db3438ff7462e34",
+    "eslint-plugin-eslint-comments": "3.2.0",
+    "eslint-plugin-lodash": "7.4.0",
+    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-react-native": "4.0.0",
+    "react": ">=18.1.0",
+    "react-native": ">=0.70.9"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
