@@ -1,9 +1,7 @@
 import { useEffect } from 'react'
 
-const useMount = (fn) => {
+export const useMount = (fn) => {
     useEffect(() => {
         fn && fn()
     }, [])
 }
-
-export default useMount

@@ -4,12 +4,12 @@ import { RESULTS } from 'react-native-permissions'
 import isEmpty from 'lodash/isEmpty'
 import noop from 'lodash/noop'
 
-import { _permissionLogger } from './logger'
-import usePermission from './usePermission'
-import { isBlocked, isGranted } from './utils'
+import { _permissionLogger } from '../utils/logger'
+import { usePermission } from './usePermission'
+import { isBlocked, isGranted } from '../utils'
 
 
-const usePermissionWithCallbacks = (permission, handlePrompt=noop, handleBlocked=noop) => {
+export const usePermissionWithCallbacks = (permission, handlePrompt=noop, handleBlocked=noop) => {
     const [result, check, request] = usePermission(permission)
 
     const granted = useMemo(() => !isEmpty(result) ? isGranted(result) : undefined, [result])
@@ -46,5 +46,3 @@ const usePermissionWithCallbacks = (permission, handlePrompt=noop, handleBlocked
 
     return [granted, blocked, fetchGranted, prompt]
 }
-
-export default usePermissionWithCallbacks

@@ -3,12 +3,10 @@ import { check, request } from "react-native-permissions"
 
 import isEmpty from 'lodash/isEmpty'
 
-import { _permissionLogger } from './logger'
-import useMount from './hooks/useMount'
-import useAppResume from './hooks/useAppResume'
+import { _permissionLogger } from '../utils/logger'
+import { useAppResume, useMount } from '../utils'
 
-
-const usePermission = (permission) => {
+export const usePermission = (permission) => {
     const [checkResult, setCheckResult] = useState()
     const [requestResult, setRequestResult] = useState()
 
@@ -43,6 +41,3 @@ const usePermission = (permission) => {
 
     return [result, _check, _request]
 }
-
-
-export default usePermission

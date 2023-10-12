@@ -3,12 +3,11 @@ import { checkMultiple, requestMultiple } from 'react-native-permissions'
 
 import isEmpty from 'lodash/isEmpty'
 
-import { _permissionLogger } from './logger'
-import useMount from './hooks/useMount'
-import useAppResume from './hooks/useAppResume'
+import { _permissionLogger } from '../utils/logger'
+import { useAppResume, useMount } from '../utils'
 
 
-const useMultiplePermissions = (permissions) => {
+export const useMultiplePermissions = (permissions) => {
     const [checkResult, setCheckResult] = useState()
     const [requestResult, setRequestResult] = useState()
 
@@ -43,5 +42,3 @@ const useMultiplePermissions = (permissions) => {
 
     return [result, _check, _request]
 }
-
-export default useMultiplePermissions
