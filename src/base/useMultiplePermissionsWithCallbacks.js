@@ -3,12 +3,12 @@ import { useMemo, useCallback } from 'react'
 import isEmpty from 'lodash/isEmpty'
 import noop from 'lodash/noop'
 
-import { _permissionLogger } from './logger'
-import useMultiplePermissions from './useMultiplePermissions'
-import { isGrantedMultiple, containsBlocked, containsUnavailable, containsDenied } from './utils'
+import { _permissionLogger } from '../utils/logger'
+import { useMultiplePermissions } from './useMultiplePermissions'
+import { isGrantedMultiple, containsBlocked, containsUnavailable, containsDenied } from '../utils'
 
 
-const useMultiplePermissionsWithCallbacks = (permissions, handlePrompt=noop, handleBlocked=noop) => {
+export const useMultiplePermissionsWithCallbacks = (permissions, handlePrompt=noop, handleBlocked=noop) => {
     const [results, check, request]  = useMultiplePermissions(permissions)
 
     const granted = useMemo(() => !isEmpty(results) ? isGrantedMultiple(results) : undefined, [results])
@@ -42,5 +42,3 @@ const useMultiplePermissionsWithCallbacks = (permissions, handlePrompt=noop, han
 
     return [granted, blocked, fetchGranted, prompt]
 }
-
-export default useMultiplePermissionsWithCallbacks
