@@ -65,7 +65,7 @@ export const useLocationPermissions = (options={precise: false, background: fals
             }
 
             // Request background permissions if we have base permissions and background has been requested
-            if (isGranted(result) && androidCanUseBackground(background)) {
+            if (isGranted(result) && androidCanUseBackground(background) && !isGranted(backgroundResult)) {
                 _permissionLogger(`useLocationPermissions#request => prompting for background permissions`)
                 // Handle caller's prompt (if provided), if we catch an error, skip requesting
                 let rejected = false
@@ -77,10 +77,10 @@ export const useLocationPermissions = (options={precise: false, background: fals
 
                 if (!rejected) {
                     _permissionLogger(`useLocationPermissions#request => requesting background permissions`)
-                    let backgroundResult = await requestBackground()
-                    result[PERMISSIONS.ANDROID.ACCESS_BACKGROUND_LOCATION] = backgroundResult
+                    let _backgroundResult = await requestBackground()
+                    result[PERMISSIONS.ANDROID.ACCESS_BACKGROUND_LOCATION] = _backgroundResult
 
-                    if (isBlocked(backgroundResult)) {
+                    if (isBlocked(_backgroundResult)) {
                         handleBackgroundBlocked()
                     }
                 }
@@ -92,7 +92,7 @@ export const useLocationPermissions = (options={precise: false, background: fals
         }
     }, [
         permissionsResult, requestPermissions,
-        background, requestBackground,
+        background, backgroundResult, requestBackground,
         handleBackgroundPrompt, handleBackgroundBlocked,
         handleBlocked, handlePrompt
     ])

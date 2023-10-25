@@ -28,7 +28,7 @@ const _useIOSHasFullLocationAccuracy = (purposeKey, handlePrompt=noop) => {
         return result === `full`
     }, [request, handlePrompt])
 
-    return [hasAccuracy, false, _check, _request]
+    return [hasAccuracy, _check, _request]
 }
 
 const _useAndroidHasFullLocationAccuracy = (_, handlePrompt=noop, handleBlocked=noop) => {
