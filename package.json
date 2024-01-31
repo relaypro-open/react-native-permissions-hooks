@@ -48,6 +48,6 @@
     "lodash": "^4.17.21",
     "react": ">=16.13.1",
     "react-native": ">=0.63.3",
-    "react-native-permissions": "^3.8.4"
+    "react-native-permissions": "^4.1.1"
   }
 }
