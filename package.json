@@ -46,8 +46,8 @@
   },
   "peerDependencies": {
     "lodash": "^4.17.21",
-    "react": ">=16.13.1",
-    "react-native": "0.73.3",
+    "react": ">=18.1.0",
+    "react-native": ">=0.70.0",
     "react-native-permissions": "^4.1.1"
   }
 }
